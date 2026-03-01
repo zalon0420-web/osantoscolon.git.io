@@ -2,8 +2,33 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="description" content="...">
+
     <title>Porfolio</title>
     <style>
+        body {
+            background-color: red;
+
+        }
+
+        .header-area {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 40px;
+
+        }
+
+        em {
+            color: aqua;
+            font-style: normal;
+
+        }
+
         img {
             width: 100px;
             border-radius: 50px;
@@ -20,9 +45,9 @@
 </head>
 
 <body>
-
-    <img src="images/Omar Profile.gif">
-    <p class="username">@zalon0420</p>
-    <p>I love tacos</p>
-
+    <div class="header-area">
+        <img src="images/Omar Profile.gif" alt="Omar GIF">
+        <p class="username">@zalon0420</p>
+        <p>I <em>love tacos </em>asdf adsf</p>
+    </div>
 </body>
