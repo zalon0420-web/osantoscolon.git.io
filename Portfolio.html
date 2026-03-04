@@ -10,8 +10,8 @@
     <title>Porfolio</title>
     <style>
         body {
-            background-image: url(images/bakground.gif);
-            background-size: auto;
+            background-color: rgb(0, 228, 152);
+
         }
 
         .header-area {
@@ -24,7 +24,7 @@
 
         h1 {
             text-transform: capitalize;
-            color: rgb(255, 252, 251);
+            color: rgb(0, 0, 0);
             margin-top: 20px;
         }
 
@@ -48,13 +48,24 @@
         }
 
         button {
-            background-color: rgb(255, 255, 255);
-            color: green;
-            border: black;
+            background-color: rgb(0, 0, 0);
+            color: rgb(250, 255, 250);
+            border: rgb(0, 0, 0);
             height: 55px;
             width: 100px;
             border-radius: 50px;
             cursor: pointer;
+        }
+
+        .section-box {
+            background-color: #ffffff;
+            border: 4px dashed rgb(59, 54, 54);
+            font-style: italic;
+            border-radius: 10px;
+            width: 300px;
+            padding: 10px;
+            justify-content: flex-start;
+            margin: 20px auto;
 
 
         }
@@ -71,6 +82,69 @@
         </h1>
     </div>
 
+    <body>
+
+        <h2 class="section-box"> VA Disability Combined Rating Calculator</h2>
+
+        <p class="header-area">Enter each disability rating (e.g., 10, 30, 50). Leave empty fields blank. </p>
+
+        <div id="ratings">
+            <input type="number" placeholder="Rating 1">
+            <input type="number" placeholder="Rating 2">
+            <input type="number" placeholder="Rating 3">
+            <input type="number" placeholder="Rating 4">
+            <input type="number" placeholder="Rating 5">
+            <input type="number" placeholder="Rating 6">
+            <input type="number" placeholder="Rating 7">
+            <input type="number" placeholder="Rating 8">
+        </div>
+
+        <div class="header-area">
+            <button onclick="calculateVA()">Calculate</button>
+        </div>
+        <div id="result"></div>
+
+        <script>
+            function roundToNearest10(value) {
+                let v = Math.round(value);
+                let rem = v % 10;
+                return rem >= 5 ? v + (10 - rem) : v - rem;
+            }
+
+            function calculateVA() {
+                let inputs = document.querySelectorAll("#ratings input");
+                let ratings = [];
+
+                inputs.forEach(i => {
+                    if (i.value !== "") ratings.push(parseInt(i.value));
+                });
+
+                if (ratings.length === 0) {
+                    document.getElementById("result").innerHTML = "Enter at least one rating.";
+                    return;
+                }
+
+                ratings.sort((a, b) => b - a);
+
+                let combined = 0;
+                let remaining = 100;
+
+                ratings.forEach(r => {
+                    let added = remaining * (r / 100);
+                    combined += added;
+                    remaining = 100 - combined;
+                });
+
+                let finalCombined = roundToNearest10(combined);
+
+                document.getElementById("result").innerHTML =
+                    "Combined Rating: " + finalCombined + "%";
+            }
+        </script>
+
+    </body>
+    <br>
+    <br>
     <div>
         <a href="index.html" class="button">
             <button>Return to School Page</button>

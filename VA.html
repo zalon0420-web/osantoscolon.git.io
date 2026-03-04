@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>VA Disability Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    input {
+      width: 80px;
+      margin: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+
+    }
+
+    .section-box {
+      background-color: #ffffff;
+      border: 4px dashed rgb(59, 54, 54);
+      font-style: italic;
+      border-radius: 10px;
+      width: 300px;
+      padding: 10px;
+      justify-content: flex-start;
+      margin: 20px auto;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 class=".section-box"> VA Disability Combined Rating Calculator</h2>
+
+  <p>Enter each disability rating (e.g., 10, 30, 50). Leave empty fields blank.</p>
+
+  <div id="ratings">
+    <input type="number" placeholder="Rating 1">
+    <input type="number" placeholder="Rating 2">
+    <input type="number" placeholder="Rating 3">
+    <input type="number" placeholder="Rating 4">
+    <input type="number" placeholder="Rating 5">
+  </div>
+
+  <button onclick="calculateVA()">Calculate</button>
+
+  <div id="result"></div>
+
+  <script>
+    function roundToNearest10(value) {
+      let v = Math.round(value);
+      let rem = v % 10;
+      return rem >= 5 ? v + (10 - rem) : v - rem;
+    }
+
+    function calculateVA() {
+      let inputs = document.querySelectorAll("#ratings input");
+      let ratings = [];
+
+      inputs.forEach(i => {
+        if (i.value !== "") ratings.push(parseInt(i.value));
+      });
+
+      if (ratings.length === 0) {
+        document.getElementById("result").innerHTML = "Enter at least one rating.";
+        return;
+      }
+
+      ratings.sort((a, b) => b - a);
+
+      let combined = 0;
+      let remaining = 100;
+
+      ratings.forEach(r => {
+        let added = remaining * (r / 100);
+        combined += added;
+        remaining = 100 - combined;
+      });
+
+      let finalCombined = roundToNearest10(combined);
+
+      document.getElementById("result").innerHTML =
+        "Combined Rating: " + finalCombined + "%";
+    }
+  </script>
+
+</body>
+
+</html>
