@@ -6,14 +6,15 @@
   <title>VA Disability Calculator</title>
   <style>
     body {
-      font-family: Arial;
-      max-width: 600px;
+      font-family: Arial, sans-serif;
+      max-width: 700px;
       margin: 40px auto;
     }
 
     input {
       width: 80px;
       margin: 5px;
+      padding: 5px;
     }
 
     button {
@@ -23,38 +24,23 @@
 
     #result {
       margin-top: 20px;
-      font-size: 1.2em;
-      font-weight: bold;
+      font-size: 1.1em;
     }
 
-    .header-area {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      justify-content: center;
-      margin-top: 40px;
-
-    }
-
-    .section-box {
-      background-color: #ffffff;
-      border: 4px dashed rgb(59, 54, 54);
-      font-style: italic;
-      border-radius: 10px;
-      width: 300px;
+    #math {
+      margin-top: 20px;
+      white-space: pre-line;
+      background: #f4f4f4;
       padding: 10px;
-      justify-content: flex-start;
-      margin: 20px auto;
-
     }
   </style>
 </head>
 
 <body>
 
-  <h2> VA Disability Combined Rating Calculator</h2>
+  <h2>VA Disability Combined Rating Calculator</h2>
 
-  <p>Enter each disability rating (e.g., 10, 30, 50). Leave empty fields blank.</p>
+  <p>Enter each disability rating (e.g., 10, 30, 50). Leave unused boxes empty.</p>
 
   <div id="ratings">
     <input type="number" placeholder="Rating 1">
@@ -67,13 +53,17 @@
     <input type="number" placeholder="Rating 8">
     <input type="number" placeholder="Rating 9">
     <input type="number" placeholder="Rating 10">
+    <input type="number" placeholder="Rating 11">
+    <input type="number" placeholder="Rating 12">
   </div>
 
   <button onclick="calculateVA()">Calculate</button>
 
   <div id="result"></div>
+  <div id="math"></div>
 
   <script>
+    // Round to nearest 10 like VA
     function roundToNearest10(value) {
       let v = Math.round(value);
       let rem = v % 10;
@@ -97,25 +87,37 @@
 
       let combined = 0;
       let remaining = 100;
+      let mathSteps = "--- Example of the Math ---\n";
 
       ratings.forEach(r => {
         let added = remaining * (r / 100);
+        mathSteps += `Applying ${r}% to remaining ${remaining.toFixed(1)}% adds: ${added.toFixed(1)}%\n`;
         combined += added;
         remaining = 100 - combined;
       });
 
       let finalCombined = roundToNearest10(combined);
+      let neededFor100 = combined >= 95 ? 0 : (95 - combined);
 
       document.getElementById("result").innerHTML =
-        "Combined Rating: " + finalCombined + "%";
+        `<strong>True Rating:</strong> ${combined.toFixed(1)}%<br>
+         <strong>VA Rating:</strong> ${finalCombined}%<br>
+         <strong>Remaining % Needed for 100%:</strong> ${neededFor100.toFixed(1)}%`;
+
+      document.getElementById("math").innerText = mathSteps;
     }
   </script>
-
-  <div class="header-area">
-    <a href="Portfolio.html" class="button">
-      <button>Home</button>
-    </a>
 
 </body>
 
 </html>
+
+
+<div class="header-area">
+  <a href="Portfolio.html" class="button">
+    <button>Home</button>
+  </a>
+
+  </body>
+
+  </html>
