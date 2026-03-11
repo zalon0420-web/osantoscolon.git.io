@@ -21,7 +21,7 @@
             margin: 0;
         }
 
-        /* Header layout */
+
         .header-area {
             display: flex;
             align-items: center;
@@ -37,20 +37,19 @@
 
 
         .sections {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 20px;
-            flex-wrap: nowrap;/
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            padding-block: 2rem;
+            width: min(95%, 70rem);
+            margin-inline: auto;
         }
-
 
         .section-box {
             background-color: #ffffff;
             border: 4px dashed rgb(59, 54, 54);
             font-style: italic;
             border-radius: 10px;
-            width: 300px;
             padding: 15px;
         }
 
