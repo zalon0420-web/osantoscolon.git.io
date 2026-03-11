@@ -1,100 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="HTML, CSS">
-    <meta name="description" content="...">
+    <title>Portfolio</title>
 
-    <title>Porfolio</title>
     <style>
         body {
             background-color: rgb(0, 228, 152);
-
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "header"
+                "main-buttons"
+                "footer-buttons";
+            justify-items: center;
+            padding-top: 40px;
         }
 
         .header-area {
+            grid-area: header;
             display: flex;
             align-items: center;
             gap: 25px;
-            justify-content: center;
-            margin-top: 40px;
+        }
+
+        .header-area img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
         }
 
         h1 {
             text-transform: capitalize;
-            color: rgb(0, 0, 0);
-            margin-top: 20px;
+            color: black;
+            margin: 0;
         }
 
-        em {
-            color: aqua;
-            font-style: normal;
-
-        }
-
-        img {
-            width: 100px;
-            border-radius: 50px;
-            float: left;
-            margin-right: 10px;
-
-        }
-
-        .username {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: bold;
-        }
 
         button {
-            background-color: rgb(0, 0, 0);
-            color: rgb(250, 255, 250);
-            border: rgb(0, 0, 0);
-            height: 55px;
+            background-color: black;
+            color: white;
+            border: none;
+            height: 100px;
             width: 100px;
-            border-radius: 50px;
+            border-radius: 50%;
             cursor: pointer;
+            font-size: 14px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .section-box {
-            background-color: #ffffff;
-            border: 4px dashed rgb(59, 54, 54);
-            font-style: italic;
-            border-radius: 10px;
-            width: 300px;
-            padding: 10px;
-            justify-content: flex-start;
-            margin: 20px auto;
+        .main-buttons {
+            grid-area: main-buttons;
+            margin-top: 30px;
+        }
 
 
+        .footer-buttons {
+            grid-area: footer-buttons;
+            margin-top: 20px;
         }
     </style>
 </head>
 
 <body>
+
+
     <div class="header-area">
-        <img src="images/Profile.jpg " alt="Omar GIF">
+        <img src="images/Profile.jpg" alt="Profile picture">
         <h1>
             Omar SantosColón<br>
-            Project <br>
-            Final Project<br>
+            Project<br>
+            Final Project
         </h1>
     </div>
-    <div class="header-area">
-        <a href="VA.html" class="button">
-            <button>VA CALC</button>
 
+
+    <div class="main-buttons">
+        <a href="VA.html">
+            <button>VA CALC</button>
+        </a>
+    </div>
+
+
+    <div class="footer-buttons">
+        <a href="index.html">
+            <button>JCC Class Page</button>
         </a>
     </div>
 
 </body>
-<br>
-<br>
-<div class="header-area">
-    <a href="index.html" class="button">
-        <button>JCC Class Page</button>
-    </a>
 
-</div>
-</body>
+</html>
