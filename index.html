@@ -10,29 +10,40 @@
             background-color: #5a0202;
             color: black;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         h1 {
             text-transform: capitalize;
             color: rgb(255, 252, 251);
             text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-            margin-top: 20px;
+            margin: 0;
         }
 
+        /* Header layout */
         .header-area {
             display: flex;
             align-items: center;
-            gap: 25px;
             justify-content: center;
-            margin-top: 40px;
+            gap: 25px;
+            padding: 40px 0;
         }
 
         .header-area img {
             width: 200px;
             border-radius: 100px;
-            float: none;
-            margin-right: 5px
         }
+
+
+        .sections {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: nowrap;/
+        }
+
 
         .section-box {
             background-color: #ffffff;
@@ -40,9 +51,7 @@
             font-style: italic;
             border-radius: 10px;
             width: 300px;
-            padding: 10px;
-            justify-content: flex-start;
-            margin: 20px auto;
+            padding: 15px;
         }
 
         h2 {
@@ -67,28 +76,29 @@
             SPRING 2026
         </h1>
     </div>
-    <br><br>
 
+    <div class="sections">
 
+        <div class="section-box">
+            <h2>Lab:</h2>
+            <p><a href="pgmexplanation.html">C2 Project</a></p>
+            <p><a href="programmingQuotes.html">C3 Project</a></p>
+            <p><a href="pope.html">C4 Project</a></p>
+        </div>
 
-    <div class="section-box">
-        <h2>Lab:
-        </h2>
-        <p><a href="pgmexplanation.html">C2 Project </a></p>
-        <p><a href="programmingQuotes.html"> C3 Project </a></p>
-        <p><a href="pope.html">C4 Project </a></p>
+        <div class="section-box">
+            <h2>Homeworks:</h2>
+            <p><a href="https://media.tenor.com/yheo1GGu3FwAAAAM/rick-roll-rick-ashley.gif" target="_blank">Coming
+                    Soon</a></p>
+        </div>
+
+        <div class="section-box">
+            <h2>Final Project:</h2>
+            <p><a href="Portfolio.html">Draft Status</a></p>
+        </div>
+
     </div>
 
+</body>
 
-    <div class="section-box">
-        <h2>Homeworks:
-        </h2>
-        <p><a href="https://media.tenor.com/yheo1GGu3FwAAAAM/rick-roll-rick-ashley.gif" target="_blank">Coming Soon </a>
-        </p>
-    </div>
-
-    <div class=" section-box">
-        <h2> Final Project Final:
-        </h2>
-        <p><a href="Portfolio.html"> Draft Status</a></p>
-    </div>
+</html>

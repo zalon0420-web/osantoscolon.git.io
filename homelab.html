@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar SantosColón – HomePage</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("https://zalon0420-web.github.io/images/bakground.gif");
+      background-repeat: repeat;
+      background-size: auto;
+      background-attachment: scroll;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 0 10px;
+      text-align: center;
+    }
+
+    .header img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 20px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+    }
+
+    .nav-buttons button {
+      background: black;
+      color: white;
+      border: 3px solid white;
+      height: 110px;
+      width: 150px;
+      border-radius: 55px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .nav-buttons button:hover {
+      background: #222;
+      transform: scale(1.05);
+    }
+
+    /* Small iframe box (twice as big) */
+    .small-frame-box {
+      width: 1000px;
+      height: 700px;
+      margin: 20px auto;
+      border: 4px solid white;
+      border-radius: 12px;
+      overflow: hidden;
+      background: black;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .small-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <img src="https://zalon0420-web.github.io/images/Profile.jpg" alt="Profile">
+    <h1>Omar SantosColón<br>HomePage</h1>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="https://10.10.8.139:8006/" target="_blank"><button>Proxmox</button></a>
+    <a href="va.html" target="_blank"><button>VA CALC</button></a>
+    <a href="http://10.10.8.239/ui/signin" target="_blank"><button>Koi-Pond</button></a>
+    <a href="http://10.10.8.30/admin/login" target="_blank"><button>Pi-Hole</button></a>
+    <a href="https://10.10.8.3:8446/#!/" target="_blank"><button>TAK Web Client</button></a>
+    <a href="https://10.10.8.3:8443/Marti/metrics/index.html#!/" target="_blank"><button>TAK Server</button></a>
+  </div>
+  <H2 class="header"> The Game of the Week</H2>
+  <!-- Small iframe box now showing the itch.io game -->
+  <div class="small-frame-box">
+    <iframe src="https://html-classic.itch.zone/html/15216549/WebGL/index.html"></iframe>
+  </div>
+
+</body>
+
+</html>
