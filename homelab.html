@@ -18,6 +18,14 @@
       color: white;
     }
 
+    /* 🔥 POPPING HEADERS */
+    h1,
+    h2 {
+      color: #00eaff;
+      /* neon cyan */
+      text-shadow: 0 0 10px #02464d, 0 0 20px #011618;
+    }
+
     .header {
       display: flex;
       align-items: center;
@@ -69,7 +77,6 @@
       transform: scale(1.05);
     }
 
-    /* Small iframe box (twice as big) */
     .small-frame-box {
       width: 1000px;
       height: 700px;
@@ -92,11 +99,25 @@
 
 <body>
 
+  <!-- 🎵 BACKGROUND MUSIC -->
+  <audio id="bgm" autoplay loop muted style="display:none;">
+    <source src="https://zalon0420-web.github.io/sound/theme.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.addEventListener("click", function () {
+      const bgm = document.getElementById("bgm");
+      bgm.muted = false;
+    }, { once: true });
+  </script>
+
+  <!-- HEADER -->
   <div class="header">
     <img src="https://zalon0420-web.github.io/images/Profile.jpg" alt="Profile">
     <h1>Omar SantosColón<br>HomePage</h1>
   </div>
 
+  <!-- NAV BUTTONS -->
   <div class="nav-buttons">
     <a href="https://10.10.8.139:8006/" target="_blank"><button>Proxmox</button></a>
     <a href="va.html" target="_blank"><button>VA CALC</button></a>
@@ -105,8 +126,10 @@
     <a href="https://10.10.8.3:8446/#!/" target="_blank"><button>TAK Web Client</button></a>
     <a href="https://10.10.8.3:8443/Marti/metrics/index.html#!/" target="_blank"><button>TAK Server</button></a>
   </div>
-  <H2 class="header"> The Game of the Week</H2>
-  <!-- Small iframe box now showing the itch.io game -->
+
+  <!-- GAME OF THE WEEK -->
+  <h2 class="header">The Game of the Week</h2>
+
   <div class="small-frame-box">
     <iframe src="https://html-classic.itch.zone/html/15216549/WebGL/index.html"></iframe>
   </div>
