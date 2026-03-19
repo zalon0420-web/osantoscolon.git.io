@@ -1,0 +1,87 @@
+body {
+  background-color: rgb(0, 228, 152);
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "header"
+    "cards"
+    "footer";
+  justify-items: center;
+  padding-top: 40px;
+}
+
+
+.header-area {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-area img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+h1 {
+  text-transform: capitalize;
+  color: black;
+  margin: 0;
+}
+
+
+.card-container {
+  grid-area: cards;
+  display: flex;
+  gap: 2rem;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 20px;
+  width: 180px;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.card:hover {
+  background: rgb(240, 240, 240);
+  transform: scale(1.05);
+}
+
+
+.footer-buttons {
+  grid-area: footer;
+  margin-top: 20px;
+}
+
+.footer-buttons button {
+  background-color: black;
+  color: white;
+  border: none;
+  height: 60px;
+  width: 160px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
