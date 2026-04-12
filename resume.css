@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #918888cb;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+/* LEFT COLUMN */
+.sidebar {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.sidebar h2 {
+  margin: 0 0 10px 0;
+  font-size: 26px;
+  color: #222;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 20px;
+  height: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  background: #0077cc;
+  height: 100%;
+  border-radius: 20px;
+}
+
+/* RIGHT COLUMN */
+.content {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job {
+  margin-bottom: 30px;
+}
+
+.job h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #721c1c;
+}
+
+.job .date {
+  font-size: 14px;
+  color: #546977;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  height: 55px;
+  width: 100px;
+  border-color: black;
+  border-radius: 50px;
+  cursor: pointer;
+}
