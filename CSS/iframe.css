@@ -1,0 +1,29 @@
+.iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px 0;
+}
+
+#portfolio-viewer {
+  /* Width adjusts to 95% of the screen width */
+  width: 95%;
+  max-width: 1200px;
+  /* Prevents it from getting too wide on huge monitors */
+
+  /* Height adjusts to 70% of the screen height */
+  height: 70vh;
+
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* Mobile Adjustment: Make it taller on small screens */
+@media (max-width: 600px) {
+  #portfolio-viewer {
+    height: 85vh;
+    width: 98%;
+  }
+}

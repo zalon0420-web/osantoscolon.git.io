@@ -3,83 +3,42 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Pure JS Live Calculator</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 20px;
-    }
-
-    .calc-container {
-      border: 1px solid #ccc;
-      padding: 20px;
-      width: 300px;
-      border-radius: 8px;
-    }
-
-    input,
-    select {
-      margin: 5px 0;
-      width: 100%;
-      padding: 8px;
-      box-sizing: border-box;
-    }
-
-    #result-box {
-      margin-top: 15px;
-      font-weight: bold;
-      color: #2c3e50;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Omar SantosColón</title>
+  <link rel="stylesheet" href="../CSS/reset.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/iframe.css">
   </style>
 </head>
 
 <body>
 
-  <div class="calc-container">
-    <h3>JS Live Calculator</h3>
-    <input type="number" id="val1" placeholder="Number 1" value="0">
-
-    <select id="op">
-      <option value="add">+</option>
-      <option value="sub">-</option>
-      <option value="mult">×</option>
-      <option value="div">÷</option>
-    </select>
-
-    <input type="number" id="val2" placeholder="Number 2" value="0">
-
-    <div id="result-box">Result: 0</div>
+  <div class="header-area">
+    <img src="../images/omar.gif" alt="Profile picture">
+    <h1>
+      Omar SantosColón<br>
+      CIS-119<br>
+      Final Project
+    </h1>
   </div>
 
-  <script>
-    // Grab elements from the DOM
-    const input1 = document.getElementById('val1');
-    const input2 = document.getElementById('val2');
-    const operation = document.getElementById('op');
-    const display = document.getElementById('result-box');
+  <div class="card-container">
+    <a href="resume.html" target="content-frame" class="card">Resume</a>
+    <a href="homelab.html" target="content-frame" class="card">Skills</a>
+    <a href="../project/va.html" target="content-frame" class="card">Projects</a>
+    <a href="https://www.linkedin.com/in/omarsantoscolon" target="content-frame" class="card">Linkedin</a>
+  </div>
 
-    // The calculation function
-    function updateResult() {
-      const n1 = parseFloat(input1.value) || 0;
-      const n2 = parseFloat(input2.value) || 0;
-      const op = operation.value;
-      let res = 0;
+  <div class="iframe-wrapper">
+    <iframe name="content-frame" id="portfolio-viewer" src="resume.html" title="Project Viewer">
+    </iframe>
+  </div>
 
-      switch (op) {
-        case 'add': res = n1 + n2; break;
-        case 'sub': res = n1 - n2; break;
-        case 'mult': res = n1 * n2; break;
-        case 'div': res = n2 !== 0 ? n1 / n2 : "Can't divide by zero"; break;
-      }
-
-      display.innerText = `Result: ${res}`;
-    }
-
-    // Attach listeners so it updates "Live" on input
-    [input1, input2, operation].forEach(element => {
-      element.addEventListener('input', updateResult);
-    });
-  </script>
+  <div class="return-container">
+    <a href="../index.html">
+      <button>JCC Main Page</button>
+    </a>
+  </div>
 
 </body>
 
