@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="../CSS/reset.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>To-Do List</h2>
+
+    <div class="no-print">
+      <input type="text" id="taskInput" placeholder="Enter a task...">
+      <button onclick="addTask()">Add</button>
+
+      <button onclick="resetList()" style="background-color: #dc3545; color: white;">Reset List</button>
+    </div>
+
+    <ul id="taskList">
+    </ul>
+    <br>
+    <button class="print-btn no-print" onclick="printList()">Print List</button>
+  </div>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const list = document.getElementById("taskList");
+
+      if (input.value.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = input.value;
+        list.appendChild(li);
+        input.value = "";
+      } else {
+        alert("Oops! You can't add an empty task.");
+      }
+    }
+
+    // NEW: Function to clear the whole list
+    function resetList() {
+      const list = document.getElementById("taskList");
+
+      // This line tells the <ul> to replace its internal HTML with "nothing"
+      list.innerHTML = "";
+    }
+
+    function printList() {
+      window.print();
+    }
+  </script>
+
+</body>
+
+</html>
