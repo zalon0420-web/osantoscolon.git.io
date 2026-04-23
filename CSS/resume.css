@@ -1,9 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  background: #918888cb;
+  background: #E6EEF5;
+  /* soft blue-gray background */
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #0F172A;
+  /* deep navy text */
 }
 
 .page {
@@ -17,36 +19,39 @@ body {
 
 /* LEFT COLUMN */
 .sidebar {
-  background: #ffffff;
-  border-radius: 8px;
+  background: #FFFFFF;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
 .sidebar img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
 .sidebar h2 {
   margin: 0 0 10px 0;
   font-size: 26px;
-  color: #222;
+  color: #0F172A;
 }
 
+/* Section Titles */
 .section-title {
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 25px;
   margin-bottom: 10px;
-  font-weight: bold;
-  color: #444;
-  border-bottom: 2px solid #ddd;
+  font-weight: 600;
+  color: #1D4ED8;
+  /* primary accent */
+  border-bottom: 2px solid #CBD5E1;
   padding-bottom: 5px;
 }
 
+/* Skill Bars */
 .skill-bar {
-  background: #ddd;
+  background: #CBD5E1;
   border-radius: 20px;
   height: 10px;
   margin-bottom: 10px;
@@ -54,17 +59,18 @@ body {
 }
 
 .skill-bar-fill {
-  background: #0077cc;
+  background: #2563EB;
+  /* strong blue */
   height: 100%;
   border-radius: 20px;
 }
 
 /* RIGHT COLUMN */
 .content {
-  background: #ffffff;
-  border-radius: 8px;
+  background: #FFFFFF;
+  border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
 .job {
@@ -74,21 +80,30 @@ body {
 .job h3 {
   margin: 0;
   font-size: 22px;
-  color: #721c1c;
+  color: #1D4ED8;
+  /* replaced red with professional blue */
 }
 
 .job .date {
   font-size: 14px;
-  color: #546977;
+  color: #64748B;
+  /* slate gray */
   margin-bottom: 10px;
 }
 
+/* Buttons */
 button {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: #FFFFFF;
+  color: #1D4ED8;
   height: 55px;
-  width: 100px;
-  border-color: black;
+  width: 110px;
+  border: 2px solid #1D4ED8;
   border-radius: 50px;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
 }
